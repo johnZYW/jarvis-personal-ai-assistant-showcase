@@ -1,21 +1,21 @@
 # Demo video
 
-The actual MP4/MOV demo file is intentionally not included in this automated push because the available GitHub connector can create UTF-8 text files but cannot upload binary video files through this interface.
+The Jarvis real-user demo has been uploaded to the repository root:
 
-Recommended next step:
+- [`jarvis_real_user_demo.mp4`](../jarvis_real_user_demo.mp4)
 
-1. Export the demo as `jarvis_ai_fullstack_assistant_demo.mp4`.
-2. Open this repository on GitHub.
-3. Drag the video into a new GitHub Release, issue comment, or README editor to create a GitHub asset URL.
-4. Replace the placeholder in `README.md` with that asset URL.
+## Suggested reviewer path
 
-Suggested demo flow:
+1. Open the root `README.md` first for the project narrative.
+2. Watch `jarvis_real_user_demo.mp4` to see the iOS assistant experience.
+3. Read `architecture/ARCHITECTURE.md` for the system design.
+4. Read `docs/APPLICATION_ANSWERS_CN.md` for the ByteDance AI Full-Stack Challenge application narrative.
+
+## Demo flow
 
 - Open Jarvis iOS app.
-- Show morning brief with weather, schedule, and next action.
-- Ask Jarvis to reschedule or create a calendar item.
-- Show confirmation-first card before the calendar mutation.
-- Show file preview / meeting preparation.
-- Show restaurant or local-service recommendation.
-- Show travel comparison and cost saving.
-- End with architecture slide or repository overview.
+- Show the AI assistant home/chat interface.
+- Demonstrate natural-language planning and action execution surfaces.
+- Show calendar/task/travel/local-service/cost-related workflows.
+- Highlight confirmation-first safety before user data mutation.
+- End with architecture and competition-track fit.
