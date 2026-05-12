@@ -2,13 +2,19 @@
 
 Public showcase repository for ByteDance 2026 AI Full-Stack Challenge review and portfolio demonstration.
 
-> Core implementation is currently closed-source. This repository contains the public demo package: project overview, architecture notes, resume bullets, application narrative, and video placeholder. The latest iOS app source code, production backend implementation, local databases, credentials, logs, and user data are intentionally excluded.
+> Core implementation is currently closed-source. This repository contains the public demo package: project overview, architecture notes, resume bullets, application narrative, and demo video. The latest iOS app source code, production backend implementation, local databases, credentials, logs, and user data are intentionally excluded.
 
 ## 项目简介
 
 Jarvis 是一个 iOS 个人 AI 助理原型，目标是把自然语言转成可靠、安全、可验证的生活事务操作。它不仅是聊天机器人，还能围绕日程、文件、餐厅推荐、旅行规划和费用记录形成完整工作流。
 
 技术上，Jarvis 使用 React Native / Expo 构建 iOS 前端，FastAPI 构建后端，并用 SQLite 做可沙盒化的数据存储。后端按 DDD / bounded context 拆分为 calendar、tasks、document memory、travel、local service、weather、money 等模块。所有会改动用户数据的操作都会先生成确认卡片，用户确认后才执行。
+
+## Demo video
+
+- [Jarvis real-user demo video](./jarvis_real_user_demo.mp4)
+
+The demo presents Jarvis as an AI full-stack assistant rather than a simple chatbot: the app interprets a user request, routes it through assistant capabilities, exposes confirmation/review surfaces, and updates application state around calendar, travel, local-service planning, files, and cost tracking.
 
 ## What the demo shows
 
@@ -41,20 +47,6 @@ Secondary fit:
 - **Safety layer**: confirmation-first mutation for calendar changes, itinerary saves, compound schedule drafts, and cost creation.
 - **QA layer**: simulator-based golden journey, scenario tests, smoke tests, and UX replay review.
 
-## Demo video
-
-The actual MP4/MOV file was not included in the uploaded materials available to this repository push. Recommended next step:
-
-1. Record or export `jarvis_ai_fullstack_assistant_demo.mp4`.
-2. Upload it through the GitHub web interface to this repository, a GitHub Release, or a README issue/asset.
-3. Replace this placeholder with the GitHub asset URL.
-
-Suggested file path:
-
-```text
-demo/jarvis_ai_fullstack_assistant_demo.mp4
-```
-
 ## Public / private boundary
 
 Public in this repository:
@@ -63,7 +55,7 @@ Public in this repository:
 - Architecture summary
 - Competition narrative
 - Resume bullets
-- Demo-video placeholder
+- Demo video
 - Security and privacy note
 
 Private for now:
