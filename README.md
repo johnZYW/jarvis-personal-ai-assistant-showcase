@@ -1,20 +1,20 @@
 # Jarvis Personal AI Assistant Showcase
 
-Public showcase repository for ByteDance 2026 AI Full-Stack Challenge review and portfolio demonstration.
+Public showcase repository for the Jarvis iOS personal AI assistant prototype.
 
-> Core implementation is currently closed-source. This repository contains the public demo package: project overview, architecture notes, resume bullets, application narrative, and demo video. The latest iOS app source code, production backend implementation, local databases, credentials, logs, and user data are intentionally excluded.
+> Core implementation is currently closed-source. This repository contains only the public project package: overview, architecture notes, demo video, and safety/privacy boundary. The latest iOS app source code, production backend implementation, local databases, credentials, logs, and user data are intentionally excluded.
 
-## 项目简介
+## Project overview
 
-Jarvis 是一个 iOS 个人 AI 助理原型，目标是把自然语言转成可靠、安全、可验证的生活事务操作。它不仅是聊天机器人，还能围绕日程、文件、餐厅推荐、旅行规划和费用记录形成完整工作流。
+Jarvis is an iOS personal AI assistant prototype that turns natural-language requests into safe, structured, and verifiable personal workflow actions. It is designed as more than a chatbot: it coordinates calendar planning, task management, document/meeting preparation, weather-aware planning, local-service recommendations, travel comparison, and cost tracking.
 
-技术上，Jarvis 使用 React Native / Expo 构建 iOS 前端，FastAPI 构建后端，并用 SQLite 做可沙盒化的数据存储。后端按 DDD / bounded context 拆分为 calendar、tasks、document memory、travel、local service、weather、money 等模块。所有会改动用户数据的操作都会先生成确认卡片，用户确认后才执行。
+The app uses a React Native / Expo iOS frontend, a FastAPI backend, SQLite sandbox storage, and an LLM orchestration layer. The backend is organized around bounded contexts such as calendar, tasks, document memory, travel, local services, weather, and money/cost tracking. User-data mutations are confirmation-first: Jarvis prepares a review card before executing actions such as calendar edits, itinerary saves, compound schedule drafts, or cost creation.
 
 ## Demo video
 
 - [Jarvis real-user demo video](./jarvis_real_user_demo.mp4)
 
-The demo presents Jarvis as an AI full-stack assistant rather than a simple chatbot: the app interprets a user request, routes it through assistant capabilities, exposes confirmation/review surfaces, and updates application state around calendar, travel, local-service planning, files, and cost tracking.
+The demo presents Jarvis as an AI full-stack assistant: the app interprets a user request, routes it through assistant capabilities, exposes confirmation/review surfaces, and updates application state around calendar, travel, local-service planning, files, and cost tracking.
 
 ## What the demo shows
 
@@ -26,17 +26,6 @@ The demo presents Jarvis as an AI full-stack assistant rather than a simple chat
 - Money beside Calendar: confirmed dinner and itinerary drafts save planned costs into a compact cost view.
 - Safety surface: cards for review, confirmation, choices, completed actions, and structured objects.
 
-## Competition track fit
-
-Primary track: **实现一个可以端到端交付全栈项目的“超级个体”**.
-
-Jarvis demonstrates how one developer can use AI coding tools to move from product goal, requirement decomposition, backend capability design, mobile UI, LLM orchestration, safety confirmation, simulator QA, and portfolio delivery.
-
-Secondary fit:
-
-- **AgentHub - 多 Agent 协作平台**: Jarvis already decomposes assistant capabilities into bounded contexts that can be generalized into an agent/capability hub.
-- **实现一个基于 RAG 的多模态电商智能导购 Agent**: the older RAG prototype and Jarvis recommendation flows provide a transferable foundation for retrieval-driven guidance.
-
 ## Technical scope
 
 - **Frontend**: React Native / Expo iOS interface.
@@ -47,14 +36,16 @@ Secondary fit:
 - **Safety layer**: confirmation-first mutation for calendar changes, itinerary saves, compound schedule drafts, and cost creation.
 - **QA layer**: simulator-based golden journey, scenario tests, smoke tests, and UX replay review.
 
+## Architecture
+
+See [`architecture/ARCHITECTURE.md`](./architecture/ARCHITECTURE.md).
+
 ## Public / private boundary
 
 Public in this repository:
 
 - Project overview
 - Architecture summary
-- Competition narrative
-- Resume bullets
 - Demo video
 - Security and privacy note
 
@@ -63,7 +54,3 @@ Private for now:
 - Latest iOS app source code
 - Production backend implementation
 - User data, credentials, logs, local databases, and live adapters
-
-## 中文简历版项目描述
-
-**Jarvis 个人 AI 助理** - 基于 React Native / Expo、FastAPI、SQLite 和 LLM orchestration 构建 iOS 个人助理原型。设计了日程、任务、文件、餐厅/本地服务、旅行、天气和费用等 bounded contexts，实现了确认优先的安全执行机制、文档预览、旅行/费用保存、Calendar/Money 视图，以及基于模拟器的端到端 golden journey 回归测试。
